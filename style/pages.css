@@ -274,7 +274,7 @@
 .product-row__per-unit { font-size: 11px; }
 .product-row__shipping {
   font-size: 11px;
-  /* color: var(--text-secondary); */
+  color: #ddd;
 }
 .product-row__shipping strong {
   font-weight: 800;
