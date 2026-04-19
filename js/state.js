@@ -73,6 +73,7 @@ const State = (() => {
   const addToCart = (product, option, quantity, unitPrice) => {
     // unitPrice: 쿠폰 적용 여부가 반영된 최종 단가 (없으면 고정가 10000 사용)
     const price = unitPrice !== undefined ? unitPrice : 10000;
+    const shippingFee = product.shippingFee !== undefined ? product.shippingFee : 0;
     const cart = getCart();
     const existing = cart.findIndex(
       (item) => item.productId === product.id && item.option === option
@@ -81,6 +82,7 @@ const State = (() => {
       cart[existing].quantity += quantity;
       cart[existing].unitPrice = price; // 단가 최신화
       cart[existing].totalPrice = price * cart[existing].quantity;
+      cart[existing].shippingFee = shippingFee;
     } else {
       cart.push({
         productId: product.id,
@@ -90,10 +92,30 @@ const State = (() => {
         quantity,
         unitPrice: price,
         totalPrice: price * quantity,
+        shippingFee,
       });
     }
     set(KEYS.CART, cart);
     return cart;
+  };
+
+  // 장바구니 전체 배송비 합계 (같은 productId는 한 번만 계산)
+  const getCartShipping = () => {
+    const cart = getCart();
+    const seen = new Set();
+    return cart.reduce((sum, item) => {
+      if (!seen.has(item.productId)) {
+        seen.add(item.productId);
+        return sum + (item.shippingFee || 0);
+      }
+      return sum;
+    }, 0);
+  };
+
+  const removeCartItem = (index) => {
+    const cart = getCart();
+    cart.splice(index, 1);
+    set(KEYS.CART, cart);
   };
 
   const getCartCount = () => {
@@ -130,6 +152,8 @@ const State = (() => {
     addToCart,
     getCartCount,
     getCartTotal,
+    getCartShipping,
+    removeCartItem,
     clearCart,
     getCoupon,
     applyCoupon,

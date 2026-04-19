@@ -88,16 +88,17 @@ const DetailPage = (() => {
       <!-- 배송 토글 -->
       <div class="detail-delivery-toggle" id="delivery-toggle" onclick="DetailPage.toggleDelivery()">
         <span class="detail-delivery-label">배송 정보</span>
-        <div class="detail-delivery-summary">
-          <span class="detail-delivery-type-text">배송비 및 배송일자 관련 정보</span>
-        </div>
         <svg class="delivery-toggle-icon" id="delivery-toggle-icon" width="20" height="20" viewBox="0 0 12 12" fill="#999">
           <polygon points="2,2 10,2 6,10"/>
         </svg>
+        <div class="detail-delivery-summary">
+          <span class="detail-delivery-type-text">배송비 및 배송일자 관련 정보</span>
+        </div>
+        
       </div>
       <div class="detail-delivery-detail" id="delivery-detail" style="display:none;">
-        <p class="detail-delivery-addr">- 배송 받을 주소 › <strong>우리집</strong></p>
-        <p class="detail-delivery-note"></br>- ${p.shipping} </p>
+        <p class="detail-delivery-addr">  > 배송 받을 주소 › <strong>우리집</strong></p>
+        <p class="detail-delivery-note"></br>  > ${p.shipping} </p>
       </div>
 
       <div class="divider"></div>

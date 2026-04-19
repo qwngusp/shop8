@@ -96,6 +96,7 @@ const CartPage = (() => {
     }
 
     const total = State.getCartTotal();
+    const shippingTotal = State.getCartShipping();
     const coupon = State.getCoupon();
     let discount = 0;
     if (coupon) {
@@ -106,7 +107,7 @@ const CartPage = (() => {
         discount = parseInt(coupon.label.replace(/[^0-9]/g, ''));
       }
     }
-    const finalTotal = Math.max(0, total - discount);
+    const finalTotal = Math.max(0, total - discount) + shippingTotal;
 
     page.innerHTML = `
       <div class="header">
@@ -133,6 +134,11 @@ const CartPage = (() => {
               <p class="cart-item__price">${(item.unitPrice * item.quantity).toLocaleString()}원</p>
               <p class="cart-item__qty">수량: ${item.quantity}개</p>
             </div>
+            <button class="cart-item__delete" onclick="CartPage.removeItem(${i})" aria-label="삭제">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M18 6L6 18M6 6l12 12" stroke="#999" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
           </div>
         `).join('')}
       </div>
@@ -152,7 +158,7 @@ const CartPage = (() => {
         ` : ''}
         <div class="cart-summary__row">
           <span>배송비</span>
-          <span class="free">무료</span>
+          <span class="${shippingTotal === 0 ? 'free' : ''}">${shippingTotal === 0 ? '무료' : shippingTotal.toLocaleString() + '원'}</span>
         </div>
         <div class="cart-summary__row total">
           <span>결제 예정금액</span>
@@ -181,7 +187,13 @@ const CartPage = (() => {
     });
   };
 
-  return { init };
+  const removeItem = (index) => {
+    State.removeCartItem(index);
+    Router.updateCartBadge();
+    render();
+  };
+
+  return { init, removeItem };
 })();
 
 
@@ -194,6 +206,7 @@ const CheckoutPage = (() => {
     const coupon = State.getCoupon();
 
     const total = State.getCartTotal();
+    const shippingTotal = State.getCartShipping();
     let discount = 0;
     if (coupon) {
       if (coupon.label.includes('%')) {
@@ -202,7 +215,7 @@ const CheckoutPage = (() => {
         discount = parseInt(coupon.label.replace(/[^0-9]/g, ''));
       }
     }
-    const finalTotal = Math.max(0, total - discount);
+    const finalTotal = Math.max(0, total - discount) + shippingTotal;
 
     const page = document.getElementById('page-checkout');
 
@@ -276,7 +289,7 @@ const CheckoutPage = (() => {
           ` : ''}
           <div class="checkout-price-row">
             <span>배송비</span>
-            <span class="free">무료</span>
+            <span class="${shippingTotal === 0 ? 'free' : ''}">${shippingTotal === 0 ? '무료' : shippingTotal.toLocaleString() + '원'}</span>
           </div>
           <div class="checkout-price-row total">
             <span>최종 결제금액</span>

@@ -12,7 +12,10 @@
     "shipping": "무료배송",
     "rating": 4.6,
     "reviewCount": 2890,
-    "options": ["2L x 3개"]
+    "options": [
+      "2L x 3개"
+    ],
+    "shippingFee": 0
   },
   {
     "id": "p002",
@@ -27,7 +30,10 @@
     "shipping": "배송비 2,500원",
     "rating": 4.9,
     "reviewCount": 5321,
-    "options": ["1.5L x 2개"]
+    "options": [
+      "1.5L x 2개"
+    ],
+    "shippingFee": 2500
   },
   {
     "id": "p003",
@@ -42,7 +48,10 @@
     "shipping": "무료배송",
     "rating": 4.6,
     "reviewCount": 8421,
-    "options": ["3L x 4개"]
+    "options": [
+      "3L x 4개"
+    ],
+    "shippingFee": 0
   },
   {
     "id": "p004",
@@ -57,7 +66,10 @@
     "shipping": "배송비 2,500원",
     "rating": 4.6,
     "reviewCount": 3100,
-    "options": ["3.1L x 2개"]
+    "options": [
+      "3.1L x 2개"
+    ],
+    "shippingFee": 2500
   },
   {
     "id": "p005",
@@ -72,7 +84,10 @@
     "shipping": "무료배송",
     "rating": 4.4,
     "reviewCount": 2781,
-    "options": ["2L x 4개"]
+    "options": [
+      "2L x 4개"
+    ],
+    "shippingFee": 0
   },
   {
     "id": "p006",
@@ -87,7 +102,10 @@
     "shipping": "배송비 2,500원",
     "rating": 4.5,
     "reviewCount": 2100,
-    "options": ["1.8L x 1개"]
+    "options": [
+      "1.8L x 1개"
+    ],
+    "shippingFee": 2500
   },
   {
     "id": "p007",
@@ -102,7 +120,10 @@
     "shipping": "무료배송",
     "rating": 4.5,
     "reviewCount": 3201,
-    "options": ["2.7L x 4개"]
+    "options": [
+      "2.7L x 4개"
+    ],
+    "shippingFee": 0
   },
   {
     "id": "p008",
@@ -117,7 +138,10 @@
     "shipping": "무료배송",
     "rating": 4.4,
     "reviewCount": 1500,
-    "options": ["2.1L x 4개"]
+    "options": [
+      "2.1L x 4개"
+    ],
+    "shippingFee": 0
   },
   {
     "id": "p009",
@@ -132,7 +156,10 @@
     "shipping": "무료배송",
     "rating": 4.3,
     "reviewCount": 1980,
-    "options": ["2L x 4개"]
+    "options": [
+      "2L x 4개"
+    ],
+    "shippingFee": 0
   },
   {
     "id": "p010",
@@ -147,7 +174,10 @@
     "shipping": "무료배송",
     "rating": 4.6,
     "reviewCount": 1900,
-    "options": ["1.5L x 2개"]
+    "options": [
+      "1.5L x 2개"
+    ],
+    "shippingFee": 0
   },
   {
     "id": "p011",
@@ -162,7 +192,10 @@
     "shipping": "무료배송",
     "rating": 4.7,
     "reviewCount": 9632,
-    "options": ["2L x 4개"]
+    "options": [
+      "2L x 4개"
+    ],
+    "shippingFee": 0
   },
   {
     "id": "p012",
@@ -177,7 +210,10 @@
     "shipping": "배송비 3,000원",
     "rating": 4.5,
     "reviewCount": 2210,
-    "options": ["2L x 2개"]
+    "options": [
+      "2L x 2개"
+    ],
+    "shippingFee": 3000
   },
   {
     "id": "p013",
@@ -192,7 +228,10 @@
     "shipping": "배송비 2,500원",
     "rating": 4.3,
     "reviewCount": 980,
-    "options": ["3.2L x 1개"]
+    "options": [
+      "3.2L x 1개"
+    ],
+    "shippingFee": 2500
   },
   {
     "id": "p014",
@@ -207,7 +246,10 @@
     "shipping": "배송비 3,000원",
     "rating": 4.8,
     "reviewCount": 12453,
-    "options": ["3.05L x 4개"]
+    "options": [
+      "3.05L x 4개"
+    ],
+    "shippingFee": 3000
   },
   {
     "id": "p015",
@@ -222,7 +264,10 @@
     "shipping": "무료배송",
     "rating": 4.5,
     "reviewCount": 2100,
-    "options": ["2.7L x 2개"]
+    "options": [
+      "2.7L x 2개"
+    ],
+    "shippingFee": 0
   },
   {
     "id": "p016",
@@ -237,7 +282,10 @@
     "shipping": "배송비 3,000원",
     "rating": 4.4,
     "reviewCount": 1800,
-    "options": ["2L x 2개"]
+    "options": [
+      "2L x 2개"
+    ],
+    "shippingFee": 3000
   },
   {
     "id": "p017",
@@ -252,7 +300,10 @@
     "shipping": "무료배송",
     "rating": 4.6,
     "reviewCount": 1670,
-    "options": ["3.2L x 2개"]
+    "options": [
+      "3.2L x 2개"
+    ],
+    "shippingFee": 0
   },
   {
     "id": "p018",
@@ -267,7 +318,10 @@
     "shipping": "무료배송",
     "rating": 4.6,
     "reviewCount": 4120,
-    "options": ["2.5L x 1개"]
+    "options": [
+      "2.5L x 1개"
+    ],
+    "shippingFee": 0
   },
   {
     "id": "p019",
@@ -282,7 +336,10 @@
     "shipping": "무료배송",
     "rating": 4.7,
     "reviewCount": 2700,
-    "options": ["3L x 2개"]
+    "options": [
+      "3L x 2개"
+    ],
+    "shippingFee": 0
   },
   {
     "id": "p020",
@@ -297,6 +354,9 @@
     "shipping": "무료배송",
     "rating": 4.7,
     "reviewCount": 3500,
-    "options": ["2.2L x 4개"]
+    "options": [
+      "2.2L x 4개"
+    ],
+    "shippingFee": 0
   }
 ]
