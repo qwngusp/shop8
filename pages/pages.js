@@ -323,13 +323,11 @@ const CheckoutPage = (() => {
       // 결제 로딩 오버레이 표시
       document.getElementById('pay-loading').style.display = 'flex';
 
-      // 결제한 상품들 로그
-      for (const item of cart) {
-        await Logger.logCheckout(item.productId, item.quantity, item.unitPrice * item.quantity);
-      }
-
-      // 세션 로그
-      await Logger.logSession();
+      // 로그 병렬 전송 (순차 await 제거로 속도 개선)
+      await Promise.all([
+        ...cart.map(item => Logger.logCheckout(item.productId, item.quantity, item.unitPrice * item.quantity)),
+        Logger.logSession(),
+      ]);
 
       State.clearCart();
       State.removeCoupon();

@@ -72,7 +72,10 @@ const DetailPage = (() => {
 
       <div class="detail-info">
         <p class="detail-brand">브랜드 ${p.brand}</p>
-        <h1 class="detail-name">${p.name} ${p.capacity}</h1>
+        <div class="detail-name-row">
+          <h1 class="detail-name">${p.name} ${p.capacity}</h1>
+          <span class="detail-per-unit">(${p.pricePerUnit})</span>
+        </div>
         <div class="detail-rating-row">
           <span style="color:var(--star);font-size:13px;">★★★★★</span>
           <strong>${p.rating}</strong>

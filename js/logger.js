@@ -2,7 +2,7 @@
 // Google Apps Script 웹앱으로 로그 전송
 
 const Logger = (() => {
-  const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxhI6-1GH9qKotcnRwLLyhGvQiWbklF_fDI3IbqhBc0ESXHtloB1IBp1WExwwlRv0tbCA/exec';
+  const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzV1EfrigN12oJXWbPU1YliAQ1ilz68tSrjy5sisAxnxwTCzQCQnaJ9yz2lI_0wFi9FdQ/exec';
 
   const send = async (type, payload) => {
     try {
