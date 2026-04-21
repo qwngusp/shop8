@@ -76,14 +76,18 @@ const DetailPage = (() => {
           <h1 class="detail-name">${p.name} ${p.capacity}</h1>
           <span class="detail-per-unit">(${p.pricePerUnit})</span>
         </div>
-        <div class="detail-rating-row">
-          <span style="color:var(--star);font-size:13px;">★★★★★</span>
-          <strong>${p.rating}</strong>
-          <span class="detail-review-count">(리뷰 ${p.reviewCount.toLocaleString()}개)</span>
-        </div>
+        
         <div class="detail-price-wrap" id="detail-price-wrap">
           ${priceHTML(applied)}
         </div>
+      </div>
+
+      
+      <div class="divider"></div>
+
+      <!-- 쿠폰 영역 -->
+      <div class="detail-coupon-row" id="detail-coupon-row">
+        ${couponRowHTML(applied)}
       </div>
 
       <div class="divider"></div>
@@ -91,11 +95,8 @@ const DetailPage = (() => {
       <!-- 배송 토글 -->
       <div class="detail-delivery-toggle" id="delivery-toggle" onclick="DetailPage.toggleDelivery()">
         <span class="detail-delivery-label">배송 정보</span>
-        <svg class="delivery-toggle-icon" id="delivery-toggle-icon" width="20" height="20" viewBox="0 0 12 12" fill="#999">
-          <polygon points="2,2 10,2 6,10"/>
-        </svg>
         <div class="detail-delivery-summary">
-          <span class="detail-delivery-type-text">배송비 및 배송일자 관련 정보</span>
+          <span class="detail-delivery-type-text">🔽 상세 정보</span>
         </div>
         
       </div>
@@ -106,12 +107,7 @@ const DetailPage = (() => {
 
       <div class="divider"></div>
 
-      <!-- 쿠폰 영역 -->
-      <div class="detail-coupon-row" id="detail-coupon-row">
-        ${couponRowHTML(applied)}
-      </div>
-
-      <div class="divider"></div>
+      
 
       <!-- 수량 -->
       <div class="detail-section">
@@ -178,7 +174,7 @@ const DetailPage = (() => {
     }
     return `
       <span class="detail-coupon-label">쿠폰</span>
-      <button class="detail-coupon-btn" id="btn-open-coupon">쿠폰 적용 <span>›</span></button>
+      <button class="detail-coupon-btn" id="btn-open-coupon"><span>✅</span> 쿠폰 적용하기 </button>
     `;
   };
 

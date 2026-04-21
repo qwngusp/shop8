@@ -1,362 +1,116 @@
 [
   {
     "id": "p001",
-    "name": "일반용 무향 액상세제 본품",
+    "name": "일반용 액상세제 본품",
     "brand": "A",
     "image": "images/p001.jpg",
-    "originalPrice": 18000,
-    "discountRate": 20,
-    "discountedPrice": 14400,
-    "pricePerUnit": "100ml당 240원",
-    "capacity": "2L x 3개",
-    "shipping": "무료배송",
+    "originalPrice": 10600,
+    "discountRate": 10,
+    "discountedPrice": 9500,
+    "pricePerUnit": "100ml당 475원",
+    "pricePer100ml": 475,
+    "pricePerItem": 9500,
+    "pricePer1L": 4750,
+    "capacity": "2L x 1개",
+    "shipping": "배송비 2,500원",
     "rating": 4.6,
     "reviewCount": 2890,
-    "options": [
-      "2L x 3개"
-    ],
-    "shippingFee": 0
+    "options": ["2L x 1개"],
+    "shippingFee": 2500
   },
   {
     "id": "p002",
-    "name": "실내건조 라벤더향 액상세제 본품",
-    "brand": "P",
+    "name": "일반용 액상세제 본품",
+    "brand": "A",
     "image": "images/p002.jpg",
-    "originalPrice": 31000,
-    "discountRate": 51,
-    "discountedPrice": 15000,
-    "pricePerUnit": "100ml당 500원",
-    "capacity": "1.5L x 2개",
+    "originalPrice": 31800,
+    "discountRate": 20,
+    "discountedPrice": 25400,
+    "pricePerUnit": "100ml당 423원",
+    "pricePer100ml": 423,
+    "pricePerItem": 8467,
+    "pricePer1L": 4230,
+    "capacity": "2L x 3개",
     "shipping": "배송비 2,500원",
-    "rating": 4.9,
-    "reviewCount": 5321,
-    "options": [
-      "1.5L x 2개"
-    ],
+    "rating": 4.6,
+    "reviewCount": 2890,
+    "options": ["2L x 3개"],
     "shippingFee": 2500
   },
   {
     "id": "p003",
-    "name": "일반용 코튼향 액상세제 본품",
+    "name": "일반용 액상세제 본품",
     "brand": "B",
     "image": "images/p003.jpg",
-    "originalPrice": 28750,
-    "discountRate": 3,
-    "discountedPrice": 27888,
-    "pricePerUnit": "100ml당 240원",
-    "capacity": "3L x 4개",
-    "shipping": "무료배송",
-    "rating": 4.6,
+    "originalPrice": 11400,
+    "discountRate": 10,
+    "discountedPrice": 10200,
+    "pricePerUnit": "100ml당 510원",
+    "pricePer100ml": 510,
+    "pricePerItem": 10200,
+    "pricePer1L": 5100,
+    "capacity": "2L x 1개",
+    "shipping": "배송비 3,500원",
+    "rating": 4.7,
     "reviewCount": 8421,
-    "options": [
-      "3L x 4개"
-    ],
-    "shippingFee": 0
+    "options": ["2L x 1개"],
+    "shippingFee": 3500
   },
   {
     "id": "p004",
-    "name": "일반용 무향 액상세제 본품",
-    "brand": "S",
+    "name": "일반용 액상세제 본품",
+    "brand": "B",
     "image": "images/p004.jpg",
-    "originalPrice": 19900,
-    "discountRate": 45,
-    "discountedPrice": 10900,
-    "pricePerUnit": "100ml당 176원",
-    "capacity": "3.1L x 2개",
-    "shipping": "배송비 2,500원",
-    "rating": 4.6,
-    "reviewCount": 3100,
-    "options": [
-      "3.1L x 2개"
-    ],
-    "shippingFee": 2500
+    "originalPrice": 34200,
+    "discountRate": 20,
+    "discountedPrice": 27400,
+    "pricePerUnit": "100ml당 457원",
+    "pricePer100ml": 457,
+    "pricePerItem": 9133,
+    "pricePer1L": 4570,
+    "capacity": "2L x 3개",
+    "shipping": "배송비 3,000원",
+    "rating": 4.7,
+    "reviewCount": 8421,
+    "options": ["2L x 3개"],
+    "shippingFee": 3000
   },
   {
     "id": "p005",
-    "name": "실내건조 코튼향 액상세제 리필",
-    "brand": "T",
+    "name": "일반용 액상세제 본품",
+    "brand": "C",
     "image": "images/p005.jpg",
-    "originalPrice": 51600,
-    "discountRate": 60,
-    "discountedPrice": 20190,
-    "pricePerUnit": "100ml당 252원",
-    "capacity": "2L x 4개",
-    "shipping": "무료배송",
-    "rating": 4.4,
-    "reviewCount": 2781,
-    "options": [
-      "2L x 4개"
-    ],
-    "shippingFee": 0
+    "originalPrice": 10900,
+    "discountRate": 10,
+    "discountedPrice": 9800,
+    "pricePerUnit": "100ml당 490원",
+    "pricePer100ml": 490,
+    "pricePerItem": 9800,
+    "pricePer1L": 4900,
+    "capacity": "2L x 1개",
+    "shipping": "배송비 4,000원",
+    "rating": 4.5,
+    "reviewCount": 3200,
+    "options": ["2L x 1개"],
+    "shippingFee": 4000
   },
   {
     "id": "p006",
-    "name": "일반용 라벤더향 액상세제 리필",
-    "brand": "P",
+    "name": "일반용 액상세제 본품",
+    "brand": "C",
     "image": "images/p006.jpg",
-    "originalPrice": 21200,
-    "discountRate": 42,
-    "discountedPrice": 12100,
-    "pricePerUnit": "100ml당 672원",
-    "capacity": "1.8L x 1개",
-    "shipping": "배송비 2,500원",
+    "originalPrice": 32700,
+    "discountRate": 20,
+    "discountedPrice": 26200,
+    "pricePerUnit": "100ml당 437원",
+    "pricePer100ml": 437,
+    "pricePerItem": 8733,
+    "pricePer1L": 4370,
+    "capacity": "2L x 3개",
+    "shipping": "배송비 2,000원",
     "rating": 4.5,
-    "reviewCount": 2100,
-    "options": [
-      "1.8L x 1개"
-    ],
-    "shippingFee": 2500
-  },
-  {
-    "id": "p007",
-    "name": "일반용 라벤더향 액상세제 본품",
-    "brand": "P",
-    "image": "images/p007.jpg",
-    "originalPrice": 43900,
-    "discountRate": 2,
-    "discountedPrice": 43022,
-    "pricePerUnit": "100ml당 407원",
-    "capacity": "2.7L x 4개",
-    "shipping": "무료배송",
-    "rating": 4.5,
-    "reviewCount": 3201,
-    "options": [
-      "2.7L x 4개"
-    ],
-    "shippingFee": 0
-  },
-  {
-    "id": "p008",
-    "name": "일반용 플로럴향 액상세제 리필",
-    "brand": "L",
-    "image": "images/p008.jpg",
-    "originalPrice": 31500,
-    "discountRate": 40,
-    "discountedPrice": 18900,
-    "pricePerUnit": "100ml당 225원",
-    "capacity": "2.1L x 4개",
-    "shipping": "무료배송",
-    "rating": 4.4,
-    "reviewCount": 1500,
-    "options": [
-      "2.1L x 4개"
-    ],
-    "shippingFee": 0
-  },
-  {
-    "id": "p009",
-    "name": "일반용 무향 액상세제 리필",
-    "brand": "L",
-    "image": "images/p009.jpg",
-    "originalPrice": 62000,
-    "discountRate": 63,
-    "discountedPrice": 22900,
-    "pricePerUnit": "100ml당 286원",
-    "capacity": "2L x 4개",
-    "shipping": "무료배송",
-    "rating": 4.3,
-    "reviewCount": 1980,
-    "options": [
-      "2L x 4개"
-    ],
-    "shippingFee": 0
-  },
-  {
-    "id": "p010",
-    "name": "일반용 무향 액상세제 리필",
-    "brand": "P",
-    "image": "images/p010.jpg",
-    "originalPrice": 31000,
-    "discountRate": 56,
-    "discountedPrice": 13500,
-    "pricePerUnit": "100ml당 450원",
-    "capacity": "1.5L x 2개",
-    "shipping": "무료배송",
-    "rating": 4.6,
-    "reviewCount": 1900,
-    "options": [
-      "1.5L x 2개"
-    ],
-    "shippingFee": 0
-  },
-  {
-    "id": "p011",
-    "name": "일반용 무향 액상세제 리필",
-    "brand": "B",
-    "image": "images/p011.jpg",
-    "originalPrice": 31600,
-    "discountRate": 37,
-    "discountedPrice": 19600,
-    "pricePerUnit": "100ml당 245원",
-    "capacity": "2L x 4개",
-    "shipping": "무료배송",
-    "rating": 4.7,
-    "reviewCount": 9632,
-    "options": [
-      "2L x 4개"
-    ],
-    "shippingFee": 0
-  },
-  {
-    "id": "p012",
-    "name": "일반용 플로럴향 액상세제 리필",
-    "brand": "B",
-    "image": "images/p012.jpg",
-    "originalPrice": 21800,
-    "discountRate": 51,
-    "discountedPrice": 10640,
-    "pricePerUnit": "100ml당 266원",
-    "capacity": "2L x 2개",
-    "shipping": "배송비 3,000원",
-    "rating": 4.5,
-    "reviewCount": 2210,
-    "options": [
-      "2L x 2개"
-    ],
-    "shippingFee": 3000
-  },
-  {
-    "id": "p013",
-    "name": "실내건조 플로럴향 액상세제 본품",
-    "brand": "A",
-    "image": "images/p013.jpg",
-    "originalPrice": 14900,
-    "discountRate": 29,
-    "discountedPrice": 10500,
-    "pricePerUnit": "100ml당 328원",
-    "capacity": "3.2L x 1개",
-    "shipping": "배송비 2,500원",
-    "rating": 4.3,
-    "reviewCount": 980,
-    "options": [
-      "3.2L x 1개"
-    ],
-    "shippingFee": 2500
-  },
-  {
-    "id": "p014",
-    "name": "일반용 라벤더향 액상세제 본품",
-    "brand": "G",
-    "image": "images/p014.jpg",
-    "originalPrice": 39800,
-    "discountRate": 50,
-    "discountedPrice": 19900,
-    "pricePerUnit": "100ml당 163원",
-    "capacity": "3.05L x 4개",
-    "shipping": "배송비 3,000원",
-    "rating": 4.8,
-    "reviewCount": 12453,
-    "options": [
-      "3.05L x 4개"
-    ],
-    "shippingFee": 3000
-  },
-  {
-    "id": "p015",
-    "name": "실내건조 코튼향 액상세제 본품",
-    "brand": "N",
-    "image": "images/p015.jpg",
-    "originalPrice": 53800,
-    "discountRate": 56,
-    "discountedPrice": 23400,
-    "pricePerUnit": "100ml당 433원",
-    "capacity": "2.7L x 2개",
-    "shipping": "무료배송",
-    "rating": 4.5,
-    "reviewCount": 2100,
-    "options": [
-      "2.7L x 2개"
-    ],
-    "shippingFee": 0
-  },
-  {
-    "id": "p016",
-    "name": "일반용 코튼향 액상세제 리필",
-    "brand": "A",
-    "image": "images/p016.jpg",
-    "originalPrice": 17400,
-    "discountRate": 44,
-    "discountedPrice": 9600,
-    "pricePerUnit": "100ml당 240원",
-    "capacity": "2L x 2개",
-    "shipping": "배송비 3,000원",
-    "rating": 4.4,
-    "reviewCount": 1800,
-    "options": [
-      "2L x 2개"
-    ],
-    "shippingFee": 3000
-  },
-  {
-    "id": "p017",
-    "name": "실내건조 무향 액상세제 리필",
-    "brand": "D",
-    "image": "images/p017.jpg",
-    "originalPrice": 73800,
-    "discountRate": 45,
-    "discountedPrice": 40000,
-    "pricePerUnit": "100ml당 625원",
-    "capacity": "3.2L x 2개",
-    "shipping": "무료배송",
-    "rating": 4.6,
-    "reviewCount": 1670,
-    "options": [
-      "3.2L x 2개"
-    ],
-    "shippingFee": 0
-  },
-  {
-    "id": "p018",
-    "name": "일반용 무향 액상세제 본품",
-    "brand": "P",
-    "image": "images/p018.jpg",
-    "originalPrice": 31900,
-    "discountRate": 45,
-    "discountedPrice": 17400,
-    "pricePerUnit": "100ml당 696원",
-    "capacity": "2.5L x 1개",
-    "shipping": "무료배송",
-    "rating": 4.6,
-    "reviewCount": 4120,
-    "options": [
-      "2.5L x 1개"
-    ],
-    "shippingFee": 0
-  },
-  {
-    "id": "p019",
-    "name": "실내건조 자스민향 액상세제 본품",
-    "brand": "D",
-    "image": "images/p019.jpg",
-    "originalPrice": 64800,
-    "discountRate": 36,
-    "discountedPrice": 41380,
-    "pricePerUnit": "100ml당 690원",
-    "capacity": "3L x 2개",
-    "shipping": "무료배송",
-    "rating": 4.7,
-    "reviewCount": 2700,
-    "options": [
-      "3L x 2개"
-    ],
-    "shippingFee": 0
-  },
-  {
-    "id": "p020",
-    "name": "실내건조 무향 액상세제 리필",
-    "brand": "A",
-    "image": "images/p020.jpg",
-    "originalPrice": 36500,
-    "discountRate": 37,
-    "discountedPrice": 22900,
-    "pricePerUnit": "100ml당 260원",
-    "capacity": "2.2L x 4개",
-    "shipping": "무료배송",
-    "rating": 4.7,
-    "reviewCount": 3500,
-    "options": [
-      "2.2L x 4개"
-    ],
-    "shippingFee": 0
+    "reviewCount": 3200,
+    "options": ["2L x 3개"],
+    "shippingFee": 2000
   }
 ]
