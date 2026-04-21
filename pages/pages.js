@@ -323,11 +323,12 @@ const CheckoutPage = (() => {
       // 결제 로딩 오버레이 표시
       document.getElementById('pay-loading').style.display = 'flex';
 
-      // 로그 병렬 전송 (순차 await 제거로 속도 개선)
-      await Promise.all([
-        ...cart.map(item => Logger.logCheckout(item.productId, item.quantity, item.unitPrice * item.quantity)),
-        Logger.logSession(),
-      ]);
+      // checkout 로그는 병렬 전송 (서로 독립적)
+      await Promise.all(
+        cart.map(item => Logger.logCheckout(item.productId, item.quantity, item.unitPrice * item.quantity))
+      );
+      // session 로그는 checkout 완료 후 순차 전송
+      await Logger.logSession();
 
       State.clearCart();
       State.removeCoupon();
@@ -369,12 +370,10 @@ const DonePage = (() => {
   };
 
   const tryClose = () => {
-    // 창 닫기 시도 (브라우저 정책상 window.open으로 열린 창만 가능)
     try {
       window.close();
     } catch (e) {}
 
-    // 닫히지 않으면 안내 메시지
     setTimeout(() => {
       const hint = document.querySelector('.done-hint');
       if (hint) {
