@@ -74,19 +74,6 @@ const ListPage = (() => {
         Router.navigate('detail', { id });
       });
     });
-
-    // 배송비 토글 — 클릭 이벤트가 product-row까지 올라가지 않도록 막음
-    list.querySelectorAll('.product-row__shipping-toggle').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const id = btn.dataset.id;
-        const detail = document.getElementById(`shipping-detail-${id}`);
-        const chevron = document.getElementById(`chevron-${id}`);
-        const isOpen = detail.style.display !== 'none';
-        detail.style.display = isOpen ? 'none' : 'block';
-        chevron.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
-      });
-    });
   };
 
   const bindCategoryTabs = () => {
@@ -101,35 +88,141 @@ const ListPage = (() => {
     });
   };
 
+  // 상품별 배송비 토글 깊이 설정 (T6 조건 - 토글 조작)
+  // p001=C단품(6위,강도1), p002=B묶음(3위,강도2), p003=A단품(4위,강도2)
+  // p004=A묶음(1위,강도3), p005=C묶음(2위,강도2), p006=B단품(5위,강도2)
+  const TOGGLE_DEPTH = {
+    'p001': 1,
+    'p002': 2,
+    'p003': 2,
+    'p004': 3,
+    'p005': 2,
+    'p006': 2,
+  };
+
+  // 토글 깊이에 따른 배송비 HTML 생성
+  const shippingToggleHTML = (p) => {
+    const depth = TOGGLE_DEPTH[p.id] || 1;
+    const id = p.id;
+
+    if (depth === 1) {
+      return `
+        <div class="product-row__shipping-box">
+          <div class="product-row__shipping-toggle" onclick="event.stopPropagation(); ListPage.toggleShipping('${id}', 1)">
+            🔽 배송 정보
+          </div>
+          <div id="list-shipping-inner-${id}" class="product-row__shipping-detail" style="display:none;">
+            <span class="product-row__shipping">${p.shipping}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    if (depth === 2) {
+      return `
+        <div class="product-row__shipping-box">
+          <div class="product-row__shipping-toggle" onclick="event.stopPropagation(); ListPage.toggleShipping('${id}', 1)">
+            🔽 배송 정보
+          </div>
+          <div id="list-shipping-inner-${id}" class="product-row__shipping-detail" style="display:none;">
+            <div class="product-row__shipping-toggle--sub" onclick="event.stopPropagation(); ListPage.toggleShipping('${id}', 2)">
+              🔽 배송비
+            </div>
+            <div id="list-shipping-fee-${id}" class="product-row__shipping-detail" style="display:none;">
+              <span class="product-row__shipping">${p.shipping}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    if (depth === 3) {
+      return `
+        <div class="product-row__shipping-box">
+          <div class="product-row__shipping-toggle" onclick="event.stopPropagation(); ListPage.toggleShipping('${id}', 1)">
+            🔽 배송 정보
+          </div>
+          <div id="list-shipping-inner-${id}" class="product-row__shipping-detail" style="display:none;">
+            <div class="product-row__shipping-toggle--sub" onclick="event.stopPropagation(); ListPage.toggleShipping('${id}', 2)">
+              🔽 배송비
+            </div>
+            <div id="list-shipping-fee-${id}" class="product-row__shipping-detail" style="display:none;">
+              <button class="product-row__shipping-btn" onclick="event.stopPropagation(); ListPage.showShippingFinal('${id}')">
+                내용확인하기
+              </button>
+              <div id="list-shipping-final-${id}" class="product-row__shipping-final" style="display:none;">
+                <span class="product-row__shipping">${p.shipping}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    return '';
+  };
+
   const productRow = (p) => `
     <div class="product-row" data-id="${p.id}">
       <div class="product-row__img">
         <img src="${p.image}" alt="${p.name}"
           onerror="this.parentNode.style.background='#f0f0f0';this.style.display='none';" />
-        ${p.discountRate >= 50 ? `<span class="product-row__badge">최저가</span>` : ''}
       </div>
       <div class="product-row__info">
         <p class="product-row__name_capacity">[브랜드${p.brand}] ${p.name} ${p.capacity}</p>
-
-        <p class="product-row__original">${p.originalPrice.toLocaleString()}원</p>
         <div class="product-row__price-row">
-          <span class="product-row__discount">${p.discountRate}%</span>
-          <span class="product-row__price">${p.discountedPrice.toLocaleString()}원</span>
+          <span class="product-row__price">${p.originalPrice.toLocaleString()}원</span>
         </div>
-
         <div class="product-row__footer">
-          <button class="product-row__shipping-toggle" data-id="${p.id}">
-            <span class="product-row__shipping-text">🔽 배송 상세 정보  </span>
-            <!--<span class="product-row__shipping-chevron" id="chevron-${p.id}">▾</span>-->
-          </button>
-        </div>
-
-        <div class="product-row__shipping-detail" id="shipping-detail-${p.id}" style="display:none;">
-          <p class="product-row__shipping-fee">${p.shipping}</p>
+          ${shippingToggleHTML(p)}
         </div>
       </div>
     </div>
   `;
 
-  return { init, getProducts: () => products };
+  // 1단계 토글 열기/닫기
+  const toggleShipping = (productId, level) => {
+    if (level === 1) {
+      const el = document.getElementById(`list-shipping-inner-${productId}`);
+      const toggle = el?.previousElementSibling;
+      if (!el) return;
+      const isOpen = el.style.display === 'block';
+      el.style.display = isOpen ? 'none' : 'block';
+      if (toggle) toggle.textContent = isOpen ? '🔽 배송 정보' : '🔼 배송 정보';
+      // 닫을 때 하위도 초기화
+      if (isOpen) {
+        const feeEl = document.getElementById(`list-shipping-fee-${productId}`);
+        const finalEl = document.getElementById(`list-shipping-final-${productId}`);
+        const btnEl = el.querySelector('.product-row__shipping-btn');
+        if (feeEl) feeEl.style.display = 'none';
+        if (finalEl) finalEl.style.display = 'none';
+        if (btnEl) btnEl.style.display = '';
+        const subToggle = el.querySelector('.product-row__shipping-toggle--sub');
+        if (subToggle) subToggle.textContent = '🔽 배송비';
+      }
+    } else if (level === 2) {
+      const el = document.getElementById(`list-shipping-fee-${productId}`);
+      const toggle = el?.previousElementSibling;
+      if (!el) return;
+      const isOpen = el.style.display === 'block';
+      el.style.display = isOpen ? 'none' : 'block';
+      if (toggle) toggle.textContent = isOpen ? '🔽 배송비' : '🔼 배송비';
+      if (isOpen) {
+        const finalEl = document.getElementById(`list-shipping-final-${productId}`);
+        const btnEl = el.querySelector('.product-row__shipping-btn');
+        if (finalEl) finalEl.style.display = 'none';
+        if (btnEl) btnEl.style.display = '';
+      }
+    }
+  };
+
+  // 강도3 전용: 내용확인하기 버튼
+  const showShippingFinal = (productId) => {
+    const btn = document.querySelector(`#list-shipping-fee-${productId} .product-row__shipping-btn`);
+    const final = document.getElementById(`list-shipping-final-${productId}`);
+    if (btn) btn.style.display = 'none';
+    if (final) final.style.display = 'block';
+  };
+
+  return { init, getProducts: () => products, toggleShipping, showShippingFinal };
 })();
