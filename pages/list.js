@@ -211,21 +211,21 @@ const ListPage = (() => {
   // p004=A묶음(1위,강도3), p005=C묶음(2위,강도2), p006=B단품(5위,강도2)
   const TOGGLE_DEPTH = {
     'p001': 1,
-    'p002': 2,
-    'p003': 2,
-    'p004': 3,
-    'p005': 2,
-    'p006': 2,
+    'p002': 1,
+    'p003': 1,
+    'p004': 1,
+    'p005': 1,
+    'p006': 1,
   };
 
   // 상품별 배송비 색상 설정
   const SHIPPING_COLOR = {
-    'p001': '#6e6e6e',
-    'p002': '#b4b3b3',
-    'p003': '#b4b3b3',
-    'p004': '#eee',
-    'p005': '#b4b3b3',
-    'p006': '#a8a8a8',
+    'p001': '#ddd',
+    'p002': '#ddd',
+    'p003': '#ddd',
+    'p004': '#ddd',
+    'p005': '#ddd',
+    'p006': '#ddd',
   };
 
   // 토글 깊이에 따른 배송비 HTML 생성
@@ -242,7 +242,7 @@ const ListPage = (() => {
             🔽 배송 정보
           </div>
           <div id="list-shipping-inner-${id}" class="product-row__shipping-detail" style="display:none;">
-            <span class="product-row__shipping"${colorStyle}><span class="shipping-box-icon">📦</span>${p.shipping}</span>
+            <span class="product-row__shipping"${colorStyle}><span class="shipping-box-icon"></span>${p.shipping}</span>
           </div>
         </div>
       `;
@@ -259,7 +259,7 @@ const ListPage = (() => {
               🔽 배송비
             </div>
             <div id="list-shipping-fee-${id}" class="product-row__shipping-detail" style="display:none;">
-              <span class="product-row__shipping"${colorStyle}><span class="shipping-box-icon">📦</span>${p.shipping}</span>
+              <span class="product-row__shipping"${colorStyle}><span class="shipping-box-icon"></span>${p.shipping}</span>
             </div>
           </div>
         </div>
@@ -281,7 +281,7 @@ const ListPage = (() => {
                 내용확인하기
               </button>
               <div id="list-shipping-final-${id}" class="product-row__shipping-final" style="display:none;">
-                <span class="product-row__shipping"${colorStyle}><span class="shipping-box-icon">📦</span>${p.shipping}</span>
+                <span class="product-row__shipping"${colorStyle}><span class="shipping-box-icon"></span>${p.shipping}</span>
               </div>
             </div>
           </div>
